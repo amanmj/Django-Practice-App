@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My name is Khan</title>
+</head>
+<body>
+<div class="header">
+<a href="{% url 'post_new' %}">Create new Post</a>
+</div>
+{% for posti in posts %}
+	<div class="post">
+		<div class="date">{{posti.pushlished_date}}</div>
+		<h1><a href="{% url 'post_detail' pk=posti.pk%}">{{posti.title}}</a></h1>
+		<p>{{posti.text}}</p>
+	</div>
+{% endfor %}
+
+</body>
+</html>
